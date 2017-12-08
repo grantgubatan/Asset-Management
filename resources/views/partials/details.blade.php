@@ -29,6 +29,7 @@
         <h5><b>Employee Number:</b> {{ $employee->emp_id }}</h5>
         <h5><b>Seat Number:</b> {{ $employee->seat }}</h5>
         <h5><b>Employee Name:</b> {{ $employee->name }}</h5>
+<<<<<<< HEAD
         <h5><b>Deployed By:</b> {{ $employee->hardware->deployed_by }}</h5>
         <p><b>Deployed at:</b> {{$employee->hardware->created_at->format('M d, Y  g:i A')}}</p>
         @elseif($hardware->status === 'Inventory')
@@ -41,6 +42,20 @@
         <h5><b>Past Owner:</b> <h5>{{ $employee->name }}</h5></h5>
         <h5><b>Deployed By:</b> {{ $employee->hardware->deployed_by }}</h5>
         <p><b>Deployed Date:</b> {{$employee->hardware->deployed_date->format('M d, Y  g:i A')}}</p>
+=======
+        <h5><b>Deployed By:</b> {{ $employee->deployed_by }}</h5>
+        <p><b>Deployed at:</b> {{$employee->created_at->format('M d, Y  g:i A')}}</p>
+        @elseif($hardware->status === 'Inventory')
+        <hr>
+        <h5><b>Past Owner:</b> <h5>{{ $employee->name }}</h5></h5>
+        <h5><b>Deployed By:</b> {{ $employee->deployed_by }}</h5>
+        <p><b>Deployed at:</b> {{$employee->created_at->format('M d, Y  g:i A')}}</p>
+        @else
+        <hr>
+        <h5><b>Past Owner:</b> <h5>{{ $employee->name }}</h5></h5>
+        <h5><b>Deployed By:</b> {{ $employee->deployed_by }}</h5>
+        <p><b>Deployed Date:</b> {{$employee->deployed_date->format('M d, Y  g:i A')}}</p>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
         @endif
         @endforeach
       </div>

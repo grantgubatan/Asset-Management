@@ -26,9 +26,12 @@ class CreateHardwaresTable extends Migration
             $table->date('purchased_date')->nullable();
             $table->date('warranty_date')->nullable();
             $table->string('status')->default('Delivered');
+<<<<<<< HEAD
             $table->string('deployed_by')->nullable();
             $table->date('deployed_date')->nullable();
             $table->date('disposed_date')->nullable();
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
             $table->timestamps();
         });
     }

@@ -55,6 +55,16 @@
 
           <div>
             <p>
+<<<<<<< HEAD
+=======
+              <strong>Graphics</strong>
+            </p>
+            <input type="text" name="graphics" value="{{$hardware->graphics}}" placeholder="Graphics" class="form-control" required>
+          </div>
+
+          <div>
+            <p>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
               <strong>Storage</strong>
             </p>
             <input type="text" name="storage" value="{{$hardware->storage}}" placeholder="Storage" class="form-control" required>

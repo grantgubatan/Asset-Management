@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'HardwareController@searchHardware');
 Route::get('/searchUser', 'HardwareController@searchUser');
 Route::get('/inventory', 'HardwareController@inventory');
+<<<<<<< HEAD
 Route::get('/disposed', 'HardwareController@disposed');
 Route::get('/deployed', 'HardwareController@deployed');
 Route::get('/device/{id}', 'HardwareController@showDevice');
@@ -31,6 +32,10 @@ Route::get('/deliveries/report', 'HomeController@deliveries');
 Route::get('/inventory/report', 'HomeController@inventory');
 Route::get('/deployed/report', 'HomeController@deployed');
 Route::get('/disposed/report', 'HomeController@disposed');
+=======
+Route::get('/deployed', 'HardwareController@deployed');
+Route::get('/device/{id}', 'HardwareController@showDevice');
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 /* Deliveries*/
 Route::get('/deliveries', 'HardwareController@deliveries');
 /*Sort Delivery*/
@@ -65,6 +70,7 @@ Route::put('out/delivery/{id}', 'HardwareController@OutDelivery');
 Route::put('in/all', 'HardwareController@InAllSelected');
 Route::put('delivery/all', 'HardwareController@DeliveryAllSelected');
 /* Delete data */
+<<<<<<< HEAD
 Route::put('/delete/delivery/{id}', 'HardwareController@deleteDelivery');
 Route::delete('delete/all', 'HardwareController@deleteAllSelected');
 
@@ -97,3 +103,7 @@ Route::delete('delete/all', 'HardwareController@deleteAllSelected');
 
 /*SOFTWARE ASSETS ROUTE*/
 Route::get('/software', 'SoftwareController@index');
+=======
+Route::delete('/delete/delivery/{id}', 'HardwareController@deleteDelivery');
+Route::delete('delete/all', 'HardwareController@deleteAllSelected');
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f

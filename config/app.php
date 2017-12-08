@@ -164,9 +164,13 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+<<<<<<< HEAD
         Barryvdh\DomPDF\ServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
         MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+=======
+
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 
         /*
          * Package Service Providers...
@@ -234,9 +238,12 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Elasticsearch' => Cviebrock\LaravelElasticsearch\Facade::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+<<<<<<< HEAD
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 
     ],
 

@@ -13,13 +13,20 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+<<<<<<< HEAD
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+=======
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootswatch.css') }}" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-confirmation/1.0.5/bootstrap-confirmation.min.js"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     {!! Charts::styles() !!}
 </head>
 <body>
@@ -54,7 +61,11 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
+<<<<<<< HEAD
                             <!--<li><a href="{{ route('register') }}">Register</a></li>-->
+=======
+                            <li><a href="{{ route('register') }}">Register</a></li>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -75,11 +86,23 @@
                                   </li>
 
                                   <li>
+<<<<<<< HEAD
                                     <a href="#"><i class="fa fa-user fa-lg"></i> Profile</a>
                                   </li>
 
                                   <li>
                                     <a href="#"><i class="fa fa-users fa-lg"></i> Administrators</a>
+=======
+                                    <a href="{{url('deliveries')}}"><i class="fa fa-truck fa-lg"></i> Deliveries</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="{{url('inventory')}}"><i class="fa fa-dropbox fa-lg"></i> Inventory</a>
+                                  </li>
+
+                                  <li>
+                                    <a href="{{url('deployed')}}"><i class="fa fa-users fa-lg"></i> Deployed</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                                   </li>
 
                                     <hr>
@@ -103,10 +126,13 @@
         </nav>
 
         <div style="margin-top:100px">
+<<<<<<< HEAD
           @if (Auth::guest())
           @else
               @include('partials.sidebar')
           @endif
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
             @yield('content')
         </div>
     </div>
@@ -117,12 +143,15 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+<<<<<<< HEAD
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     <script>
     $(document).ready(function()
     {
@@ -344,7 +373,11 @@
     /* END DELETE ALL */
 
     });
+<<<<<<< HEAD
     /*ALERT*/
+=======
+
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     @if(Session::has('message'))
               var type="{{Session::get('alert-type','info')}}";
 
@@ -379,7 +412,10 @@
                       break;
               }
     @endif
+<<<<<<< HEAD
     /*ALERT*/
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     </script>
 </body>
 </html>

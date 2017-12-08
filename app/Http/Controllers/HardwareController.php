@@ -51,6 +51,12 @@ class HardwareController extends Controller
                     "
                     <td>
                     <a href='/device/$hardware->id' target='_blank' class='btn btn-primary btn-xs'>View Details</a>
+<<<<<<< HEAD
+=======
+                    <a href='#' class='btn btn-success btn-xs' data-toggle='modal' data-target='#inModal$hardware->id'>In</a>
+                    <a href='#' class='btn btn-primary btn-xs' data-toggle='modal' data-target='#outModal$hardware->id'>Out</a>
+                    <a href='#' class='btn btn-info btn-xs' data-toggle='modal' data-target='#editModal$hardware->id'>Edit</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                     <a href='#' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#deleteModal$hardware->id'>Remove</a>
 
                     <!-- Modal -->
@@ -271,6 +277,7 @@ class HardwareController extends Controller
                     '<td>'.$emphardware->model_name.'</td>'.
                     '<td>'.$emphardware->hardware_type.'</td>'.
                     '<td>'.$emphardware->brand.'</td>'.
+<<<<<<< HEAD
                     '<td>'.$emphardware->owners[0]->emp_id.'</td>'.
                     '<td>'.$emphardware->owners[0]->seat.'</td>'.
                     '<td>'.$emphardware->owners[0]->name.'</td>'.
@@ -279,6 +286,21 @@ class HardwareController extends Controller
                     "
                     <td>
                     <a href=/device/$emphardware->id target='_blank' class='btn btn-primary btn-xs'>View Details</a>
+=======
+                    '<td>'.$emphardware->purchased_date->format('M d, Y').'</td>'.
+                    '<td>'.$emphardware->warranty_date->format('M d, Y').'</td>'.
+                    '<td>'.$emphardware->owners[0]->emp_id.'</td>'.
+                    '<td>'.$emphardware->owners[0]->seat.'</td>'.
+                    '<td>'.$emphardware->owners[0]->name.'</td>'.
+                    '<td>'.$emphardware->owners[0]->deployed_by.'</td>'.
+                    '<td>'.$emphardware->owners[0]->deployed_date->format('M d, Y').'</td>'.
+                    "
+                    <td>
+                    <a href=/device/$emphardware->id target='_blank' class='btn btn-primary btn-xs'>View Details</a>
+                    <a href='#' class='btn btn-success btn-xs' data-toggle='modal' data-target='#inModal$emphardware->id'>In</a>
+                    <a href='#' class='btn btn-primary btn-xs' data-toggle='modal' data-target='#outModal$emphardware->id'>Out</a>
+                    <a href='#' class='btn btn-info btn-xs' data-toggle='modal' data-target='#editModal$emphardware->id'>Edit</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                     <a href='#' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#deleteModal$emphardware->id'>Remove</a>
 
                     <!-- Modal -->
@@ -490,7 +512,10 @@ class HardwareController extends Controller
   {
       $hardware = Hardware::findOrFail($id);
       $hardware->status = "Inventory";
+<<<<<<< HEAD
       $hardware->disposed_date = null;
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
       $hardware->save();
 
       $notification = array(
@@ -517,11 +542,18 @@ class HardwareController extends Controller
   {
     $hardware = Hardware::findOrFail($id);
     $hardware->status = "Deployed";
+<<<<<<< HEAD
     $hardware->deployed_by = $request->deployed_by;
     $hardware->deployed_date = date('Y-m-d');
     $hardware->save();
 
     $employee = new Employee;
+=======
+    $hardware->save();
+
+    $employee = new Employee;
+    $employee->deployed_by = $request->deployed_by;
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     $employee->hardware_id = $hardware->id;
     $employee->emp_id = $request->emp_id;
     $employee->name = $request->fullname;
@@ -601,6 +633,7 @@ class HardwareController extends Controller
   {
      $hardware = Hardware::findOrFail($id);
 
+<<<<<<< HEAD
      $hardware->status = "Disposed";
      $hardware->disposed_date = date('Y-m-d');
 
@@ -608,6 +641,12 @@ class HardwareController extends Controller
 
      $notification = array(
               'message' => "Device Disposed",
+=======
+     $hardware->delete();
+
+     $notification = array(
+              'message' => "Device Removed",
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
               'alert-type' => 'success'
           );
      return Redirect::back()->with($notification);
@@ -663,10 +702,13 @@ class HardwareController extends Controller
           $hardware->purchased_date = $row['purchased_date'];
           $hardware->warranty_date = $row['warranty_date'];
           $hardware->status = "Deployed";
+<<<<<<< HEAD
           $hardware->deployed_by = "Deployed";
           $hardware->status = "Deployed";
           $hardware->deployed_by = $row['deployed_by'];
           $hardware->deployed_date = $row['deployed_date'];
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
           $hardware->save();
 
 
@@ -675,6 +717,11 @@ class HardwareController extends Controller
           $employee->emp_id = $row['emp_id'];
           $employee->seat = $row['seatnum'];
           $employee->name = $row['deployed_to'];
+<<<<<<< HEAD
+=======
+          $employee->deployed_by = $row['deployed_by'];
+          $employee->deployed_date = $row['deployed_date'];
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
           $employee->save();
 
         }
@@ -692,10 +739,14 @@ class HardwareController extends Controller
   public function deleteAllSelected(Request $request)
   {
     $ids = $request->ids;
+<<<<<<< HEAD
     DB::table("hardwares")->whereIn('id',explode(",",$ids))->update([
       'status' => 'Disposed',
       'disposed_date' => date('Y-m-d')
     ]);
+=======
+    DB::table("hardwares")->whereIn('id',explode(",",$ids))->delete();
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 
     $notification = array(
              'message' => "All Selected Devices Removed",
@@ -715,7 +766,10 @@ class HardwareController extends Controller
     {
       $hardware = Hardware::findOrFail($id);
       $hardware->status = "Inventory";
+<<<<<<< HEAD
       $hardware->disposed_date = null;
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
       $hardware->save();
     }
 
@@ -755,6 +809,7 @@ class HardwareController extends Controller
     return view('inventory', compact('hardwares'));
   }
 
+<<<<<<< HEAD
   public function disposed()
   {
     $hardwares = Hardware::where('status', '=', 'Disposed')->orderBy('created_at', 'desc')->paginate(10);
@@ -762,6 +817,8 @@ class HardwareController extends Controller
     return view('disposed', compact('hardwares'));
   }
 
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
   public function inventorySortByWarrantyASC()
   {
     $hardwares = Hardware::where('status', '=', 'Inventory')->orderBy('warranty_date', 'asc')->paginate(10);
@@ -864,8 +921,12 @@ class HardwareController extends Controller
     $hardware->purchased_date = $request->pd;
     $hardware->warranty_date = $request->wt;
     $hardware->status = 'Deployed';
+<<<<<<< HEAD
     $hardware->deployed_by = $request->db;
     $hardware->deployed_date = $request->dd;
+=======
+
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     $hardware->save();
 
     $employee = new Employee();
@@ -874,6 +935,12 @@ class HardwareController extends Controller
     $employee->emp_id = $request->empid;
     $employee->seat = $request->sn;
     $employee->name = $request->dt;
+<<<<<<< HEAD
+=======
+    $employee->deployed_by = $request->db;
+    $employee->deployed_date = $request->dd;
+
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     $employee->save();
 
     $notification = array(

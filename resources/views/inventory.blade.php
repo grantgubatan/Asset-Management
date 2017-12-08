@@ -2,12 +2,15 @@
 
 @section('content')
 <div class="container">
+<<<<<<< HEAD
 
   <div class="">
     <a class="btn btn-primary btn-sm" href="{{url('inventory/report')}}" target="_blank"><i class="fa fa-print"></i> Generate Inventory Report</a>
   </div>
   <br>
 
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     <h2>Inventory</h2>
     <div class="row">
       <div class="right-inner-addon">
@@ -67,7 +70,11 @@
               <td>
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#owner{{$hardware->id}}" >View Details</button>
                 <a href="#" class="btn btn-info btn-xs" data-toggle="modal" data-target="#outModal{{$hardware->id}}">Deploy</a>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Dispose</a>
+=======
+                <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Remove</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                 @include('partials.details')
                 @include('partials.inModal')
                 @include('partials.outModal')

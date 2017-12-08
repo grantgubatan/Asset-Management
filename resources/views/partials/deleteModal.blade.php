@@ -9,7 +9,11 @@
         </button>
       </div>
       <form class="" action="{{url('/delete/delivery/'.$hardware->id)}}" method="POST">
+<<<<<<< HEAD
         {{csrf_field()}} {{method_field('PUT')}}
+=======
+        {{csrf_field()}} {{method_field('DELETE')}}
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
         <div class="modal-body">
           <h3>Remove {{$hardware->model_name}} ?</h3>
         </div>

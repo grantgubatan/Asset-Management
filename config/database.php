@@ -51,7 +51,11 @@ return [
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
+<<<<<<< HEAD
             'engine' => 'InnoDB',
+=======
+            'engine' => null,
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
         ],
 
         'pgsql' => [

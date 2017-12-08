@@ -7,9 +7,12 @@ use Charts;
 use App\Hardware;
 use App\Employee;
 use App\User;
+<<<<<<< HEAD
 use App;
 use PDF;
 use Dompdf\Dompdf;
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 class HomeController extends Controller
 {
     /**
@@ -38,7 +41,11 @@ class HomeController extends Controller
                 ->groupBy('status')
                 ->width(600);
 
+<<<<<<< HEAD
       $vendor = Charts::database(Hardware::where('status', '!=', 'Disposed')->get(), 'pie', 'highcharts')
+=======
+      $vendor = Charts::database(Hardware::all(), 'pie', 'highcharts')
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                   ->colors(['#3ba594', '#64cefc', '#ffee07'])
                   ->title('Vendors')
                   ->elementLabel("Device Vendors")
@@ -47,7 +54,11 @@ class HomeController extends Controller
                   ->groupBy('brand')
                   ->width(600);
 
+<<<<<<< HEAD
       $hardware_type = Charts::database(Hardware::where('status', '!=', 'Disposed')->get(), 'donut', 'highcharts')
+=======
+      $hardware_type = Charts::database(Hardware::all(), 'donut', 'highcharts')
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                   ->colors(['#3ba594', '#64cefc', '#ffee07'])
                   ->title('Hardware Type')
                   ->elementLabel("Hardware")
@@ -59,6 +70,7 @@ class HomeController extends Controller
      return view('home', ['status' => $status,  'vendor' => $vendor, 'hardware_type' => $hardware_type ]);
 
     }
+<<<<<<< HEAD
 
     public function dashboard()
     {
@@ -251,4 +263,6 @@ class HomeController extends Controller
 
                  //return view('reports/deliveries-report', compact('deliveries' , $deliveries));
     }
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
 }

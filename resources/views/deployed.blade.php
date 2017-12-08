@@ -10,7 +10,10 @@
 <div class="container">
   <div class="row">
     @include('partials.entryDeployed')
+<<<<<<< HEAD
     <a class="btn btn-primary btn-sm" href="{{url('deployed/report')}}" target="_blank"><i class="fa fa-print"></i> Generate Deployed Report</a>
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
   </div>
 
     <h2>Deployed Devices</h2>
@@ -58,13 +61,23 @@
               <td>{{ $employee->emp_id }}</td>
               <td>{{ $employee->seat }}</td>
               <td>{{ $employee->name }}</td>
+<<<<<<< HEAD
               <td>{{ $employee->hardware->deployed_by }}</td>
               <td>{{ Carbon\Carbon::parse( $employee->hardware->deployed_date)->format('M d, Y') }}</td>
+=======
+              <td>{{ $employee->deployed_by }}</td>
+              <td>{{ Carbon\Carbon::parse( $employee->deployed_date)->format('M d, Y') }}</td>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
               @endif($hardware->status === 'Inventory')
               @endforeach
               <td>
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#owner{{$hardware->id}}" >View Details</button>
+<<<<<<< HEAD
                 <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Dispose</a>
+=======
+                <a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#inModal{{$hardware->id}}">Return to Inventory</a>
+                <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Remove</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                 @include('partials.details')
                 @include('partials.inModal')
                 @include('partials.outModal')

@@ -4,7 +4,10 @@
 <div class="container">
     <div class="">
       @include('partials.entry')
+<<<<<<< HEAD
       <a class="btn btn-primary btn-sm" href="{{url('deliveries/report')}}" target="_blank"><i class="fa fa-print"></i> Generate Delivery Report</a>
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
     </div>
     <br>
     <div class="row">
@@ -21,8 +24,11 @@
       <div class="table-responsive">
         @include('partials.multipleButtons')
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
         <select class="pull-right" name="forma" onchange="location = this.value;">
           <option>Sort By</option>
           <option value="{{url('deliveries/warranty/asc')}}">Warranty - Recent First</option>
@@ -69,7 +75,11 @@
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#owner{{$hardware->id}}" >View Details</button>
                 <!--<a href="#" class="btn btn-success btn-xs" data-toggle="modal" data-target="#inModal{{$hardware->id}}">In</a>
                 <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#outModal{{$hardware->id}}">Out</a>-->
+<<<<<<< HEAD
                 <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Dispose</a>
+=======
+                <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteModal{{$hardware->id}}">Remove</a>
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
                 @include('partials.details')
                 @include('partials.inModal')
                 @include('partials.outModal')

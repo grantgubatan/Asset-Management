@@ -3,9 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
+<<<<<<< HEAD
       <a href="{{url('/dashboard-pdf')}}" class="btn btn-primary btn-sm" target="_blank"><i class="fa fa-print"></i> Generate Report</a>
     </div>
     <div class="row">
+=======
+>>>>>>> aa2fc3d1235a337744c74bf69933a8f7115f110f
       <div class="col-sm-6">
         {!! $status->html() !!}
       </div>
